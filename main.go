@@ -7,6 +7,8 @@ import (
 
 // So main should just init the server and start accepting HTTP requests.
 func main() {
+	fmt.Printf("Server started at port 8080\n")
+	http.HandleFunc("/", index)
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/headers", headers)
 
@@ -24,4 +26,8 @@ func headers(w http.ResponseWriter, req *http.Request) {
 			fmt.Fprintf(w, "%v: %v\n", name, h)
 		}
 	}
+}
+
+func index(w http.ResponseWriter, req *http.Request) {
+
 }
