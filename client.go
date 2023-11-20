@@ -1,5 +1,5 @@
 package main
 
-type user_headers struct {
+type client struct {
 	name string
 }
